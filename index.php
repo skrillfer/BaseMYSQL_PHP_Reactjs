@@ -1,10 +1,23 @@
-<?php
-// include database and object files
-include_once '../config/database.php';
+<?php 
+    require 'database.php';
+    
+    use Database;
+   /* // get database connection
+    
 
-// get database connection
-$database = new Database();
-$db = $database->getConnection();
-echo("<script>console.log('success');</script>");
+    echo 'Hello World1',"\n"; 
 
-?>
+    
+    
+    //$db = $database->getConnection();
+*/
+    try {
+        
+        $database = new Database();
+        $database->getConnection();
+
+        $database->getAll();
+    } catch (Exception $e) {
+        echo 'Excepción capturada ';
+    }
+ ?> 
